@@ -1,0 +1,111 @@
+:root {
+  --bg: #0b1020;
+  --panel: #141a2e;
+  --panel-2: #1b2238;
+  --ink: #e8ecf6;
+  --muted: #93a0bd;
+  --line: #28324f;
+  --accent: #5b8cff;
+  --accent-2: #7c5cff;
+  --ok: #34d399;
+  --bad: #f87171;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: radial-gradient(1200px 600px at 70% -10%, #1a2240 0%, transparent 60%), var(--bg);
+  color: var(--ink);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  gap: 24px;
+}
+.app.wide { align-items: stretch; }
+
+.brand { display: flex; align-items: baseline; gap: 12px; }
+.logo {
+  font-weight: 800; font-size: 28px; letter-spacing: -0.5px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.tag { color: var(--muted); font-size: 14px; }
+
+.card {
+  width: 100%; max-width: 560px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+}
+.card h2 { margin: 0 0 18px; }
+
+.grid { display: flex; flex-direction: column; gap: 12px; }
+label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--muted); }
+input {
+  background: var(--panel-2); border: 1px solid var(--line); color: var(--ink);
+  padding: 10px 12px; border-radius: 10px; font-size: 14px;
+}
+input:focus { outline: 2px solid var(--accent); border-color: transparent; }
+
+button {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: white; border: 0; padding: 11px 16px; border-radius: 10px;
+  font-weight: 600; cursor: pointer; font-size: 14px;
+}
+button:disabled { opacity: .55; cursor: not-allowed; }
+button.ghost {
+  background: transparent; border: 1px solid var(--line); color: var(--ink);
+}
+
+.phases { display: flex; gap: 8px; list-style: none; padding: 0; margin: 0 0 20px; }
+.phases li {
+  flex: 1; text-align: center; font-size: 12px; color: var(--muted);
+  padding: 8px 4px; border-radius: 8px; border: 1px solid var(--line);
+}
+.phases li.active { color: white; border-color: var(--accent); background: rgba(91,140,255,.12); }
+.phases li.done { color: var(--ok); border-color: rgba(52,211,153,.4); }
+
+.alert { padding: 11px 14px; border-radius: 10px; font-size: 14px; margin-bottom: 14px; }
+.alert.error { background: rgba(248,113,113,.12); border: 1px solid rgba(248,113,113,.4); color: #fecaca; }
+.alert.success { background: rgba(52,211,153,.12); border: 1px solid rgba(52,211,153,.4); color: #bbf7d0; }
+.alert.info { background: rgba(91,140,255,.12); border: 1px solid rgba(91,140,255,.4); color: #c7d6ff; }
+
+.consent, .hint, .small { font-size: 12px; color: var(--muted); }
+.record { background: #0d1326; border: 1px solid var(--line); padding: 12px; border-radius: 10px; font-size: 12px; overflow:auto; }
+.switch { margin-top: 18px; font-size: 13px; color: var(--muted); }
+.switch a { color: var(--accent); cursor: pointer; }
+code { background: #0d1326; padding: 1px 6px; border-radius: 6px; font-size: 12px; }
+
+/* Home / products */
+.home { width: 100%; max-width: 980px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+.topbar {
+  display: flex; justify-content: space-between; align-items: center;
+  background: var(--panel); border: 1px solid var(--line); padding: 14px 18px; border-radius: var(--radius);
+}
+.topbar nav { display: flex; gap: 10px; }
+.muted { color: var(--muted); }
+
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.tile {
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 18px; display: flex; flex-direction: column; gap: 8px; min-height: 150px;
+}
+.tile.upsell { opacity: .9; border-style: dashed; }
+.tile-head { display: flex; justify-content: space-between; align-items: center; }
+.tile h3 { margin: 0; font-size: 16px; }
+.badge { font-size: 11px; padding: 2px 8px; border-radius: 999px; background: rgba(124,92,255,.2); color: #d6caff; }
+.badge.ok { background: rgba(52,211,153,.2); color: #bbf7d0; }
+.badge.bad { background: rgba(248,113,113,.2); color: #fecaca; }
+.state.active { color: var(--ok); font-weight: 600; font-size: 14px; }
+
+.audit { width: 100%; border-collapse: collapse; font-size: 13px; }
+.audit th, .audit td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); }
