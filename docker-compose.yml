@@ -1,0 +1,42 @@
+# Illustrative only — the MVP runs entirely in-process with zero infrastructure
+# (see backend/README.md). This file shows how the in-memory stand-ins map onto
+# the real components named in the architecture, so the path to production is
+# explicit. It is NOT required to run the assessment.
+
+version: "3.9"
+
+services:
+  api:
+    build: ./backend
+    environment:
+      VIXA_ENVIRONMENT: production
+      VIXA_JWT_SECRET: ${VIXA_JWT_SECRET}
+    ports: ["8000:8000"]
+    depends_on: [postgres, redis, kafka]
+
+  web:
+    build: ./frontend
+    ports: ["5173:80"]
+    depends_on: [api]
+
+  # Identity & credential store (replaces the in-memory IdentityRepository).
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: vixa_identity
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+
+  # Sessions & cache (replaces the in-memory SessionRepository + rate-limit buckets).
+  redis:
+    image: redis:7
+
+  # Event backbone (replaces the in-process EventBus).
+  kafka:
+    image: bitnami/kafka:3.7
+    environment:
+      KAFKA_CFG_NODE_ID: "1"
+      KAFKA_CFG_PROCESS_ROLES: "broker,controller"
+
+volumes:
+  pgdata:
