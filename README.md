@@ -77,7 +77,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:5173. The dev server proxies `/api` to the backend.
+Open http://localhost:5173
 
 ## Try the flow
 
