@@ -77,7 +77,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:5173
+Open http://localhost:5173 # For frontend UI
 
 ---
 Developed with ❤️ by Shahzaib Asif for ViXa's CIAM assessment. See [REPORT.md](REPORT.md) for the full design rationale and recommendations.
