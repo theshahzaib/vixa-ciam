@@ -3,6 +3,8 @@ import { api } from "../api/client.js";
 
 const PHASES = ["Account", "Verify contact", "Payment", "Domain", "Done"];
 
+// Dummy initial form data to speed up testing. In production these would all be blank.
+
 const initialForm = {
   email: "founder@acme-corp.com",
   password: "Sup3rSecret!pw",
