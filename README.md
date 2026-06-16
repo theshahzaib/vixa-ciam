@@ -14,8 +14,8 @@ Infinity** system of record.
   the **anti-corruption layer**, the **event backbone with a dead-letter queue**,
   and the full **security/compliance** layer are implemented — not simplified.
 
-<!-- > See **[REPORT.md](REPORT.md)** for the full architecture-to-implementation
-> mapping, API design rationale, and professional recommendations. -->
+> See **[REPORT.md](REPORT.md)** for the full architecture-to-implementation
+> mapping, API design rationale, and professional recommendations.
 
 ---
 
