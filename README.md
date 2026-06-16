@@ -79,14 +79,5 @@ npm run dev
 
 Open http://localhost:5173
 
-## Try the flow
-
-1. **Create an organisation account** — the five-phase saga: register → verify
-   email & mobile (codes are pre-filled in dev) → card (€1 hold; type `decline`
-   to see a declined card) → domain → activation.
-2. **Sign in** — admin accounts get an MFA step-up challenge.
-3. **Products & Services home** — ViXa Platform is active; others are upsell
-   tiles. Subscribe to one and watch the entitlement appear after the async
-   licence-provisioning worker runs and the token refreshes.
-4. **Admin console** — organisation overview and the verifiable audit-log chain.
-
+---
+Developed with ❤️ by Shahzaib Asif for ViXa's CIAM assessment. See [REPORT.md](REPORT.md) for the full design rationale and recommendations.
