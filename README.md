@@ -14,10 +14,6 @@ Infinity** system of record.
   the **anti-corruption layer**, the **event backbone with a dead-letter queue**,
   and the full **security/compliance** layer are implemented — not simplified.
 
-> See **[REPORT.md](REPORT.md)** for the full architecture-to-implementation
-> mapping, API design rationale, and professional recommendations.
-
----
 
 ## Repository layout
 
@@ -80,4 +76,4 @@ npm run dev
 Open http://localhost:5173 # For frontend UI
 
 ---
-Developed with ❤️ by Shahzaib Asif for ViXa's CIAM assessment. See [REPORT.md](REPORT.md) for the full design rationale and recommendations.
+Developed with ❤️ by Shahzaib Asif for ViXa's CIAM assessment.
